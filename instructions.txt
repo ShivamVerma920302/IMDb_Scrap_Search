@@ -1,0 +1,20 @@
+ #software required : wampserver 2.5
+
+--steps to follow :
+# unzip the folder(submitted)(IMDb_Search).
+
+# copy the folder to 'C:\wamp\www\' this location after installing wampserver 2.5
+
+# start wampserver
+
+# if the wamp icon is (orange),
+Click on the WAMP server icon and from the menu Apache Folder select  httpd.conf.
+A long text file will open up in notepad. Change Listen port to 8080.
+Save the file and close notepad. Once again click on the wamp server icon and select restart all services.
+
+# open web browser.
+
+# hit the url "localhost:8080/IMDb_Search/search_box.php" 
+
+# for exapmle : search for "Tom hanks" or "Brad Pitt"
+

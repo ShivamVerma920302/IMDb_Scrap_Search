@@ -1,0 +1,11 @@
+# User enter the name of the actor/actress in search box and hits search.
+
+# it sends the data from html form to test.php and futher function getActorInfo($actorName) is called.
+This method searches the given title on Google, Bing or Ask to get the best possible match and extracts the "imdbId" corresponding that actor.
+# this imdbId is passed to function getActorInfoById($imdbId) which calls scrapeActorInfo($imdbUrl) and scraps the information of actor along with the movies he is known for.
+# after getting the ids of movie he is know for , function getMovieInfobyId is further calls scrapeMovieInfo and extracts all the information for the movie.
+# after the data is returned to test.php , again a call to reviews of the movie is made.
+# getMovieReview fuction is called which uses the title_id i.e movieId to get the review of movies by the users.
+# the information is displayed through html tables.
+
+
