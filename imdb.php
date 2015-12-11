@@ -1,6 +1,7 @@
 
 <?php
 error_reporting(E_ERROR | E_PARSE);
+error_reporting(0);
 	include('simple_html_dom.php');
  class Imdb
 {   
@@ -9,11 +10,13 @@ error_reporting(E_ERROR | E_PARSE);
         $imdbId = $this->getIMDbIdFromSearch(trim($title));
         if($imdbId === NULL){
             $arr = array();
-            $arr['error'] = "No Title found in Search Results!";
-            return $arr;
+           $arr['error'] = "No Title found in Search Results!";
+            return arr;
         }
+		else{
         return $this->getActorInfoById($imdbId, $getExtraInfo);
 		return $arr;
+		}
     }
      
     // Get movie information by IMDb Id.

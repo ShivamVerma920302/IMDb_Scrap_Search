@@ -1,17 +1,15 @@
 <?php
 error_reporting(E_ERROR | E_PARSE);
 include("imdb.php");
-$movieName = $_REQUEST["search"];
+$actorName = $_REQUEST["search"];
 $i = new Imdb();
-$mArr = $i->getActorInfo($movieName);
+$mArr = $i->getActorInfo($actorName);
 $k=0;
 while($k<3){
 $review[$k] = $i->getMovieReview($mArr[$k]['title_id']);
 $k++;
 }
 $data = array_flatten($review);
-
-
 function array_flatten($review) { 
   if (!is_array($review)) { 
     return FALSE; 
@@ -26,7 +24,8 @@ function array_flatten($review) {
     } 
   } 
   return $result; 
-} 
+}
+
 //echo json_encode($review);
 ?>
 <!DOCTYPE html>

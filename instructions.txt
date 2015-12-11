@@ -14,7 +14,7 @@ Save the file and close notepad. Once again click on the wamp server icon and se
 
 # open web browser.
 
-# hit the url "localhost:8080/IMDb_Search/search_box.php" 
+# hit the url "localhost:8080/IMDb_Scrap_Search/search_box.php" 
 
 # for exapmle : search for "Tom hanks" or "Brad Pitt"
 
