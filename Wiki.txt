@@ -1,11 +1,24 @@
-# User enter the name of the actor/actress in search box and hits search.
+#Goal of the web app :
+The web application lets user search for movies actors/actress are know for.
 
-# it sends the data from html form to test.php and futher function getActorInfo($actorName) is called.
-This method searches the given title on Google, Bing or Ask to get the best possible match and extracts the "imdbId" corresponding that actor.
-# this imdbId is passed to function getActorInfoById($imdbId) which calls scrapeActorInfo($imdbUrl) and scraps the information of actor along with the movies he is known for.
-# after getting the ids of movie he is know for , function getMovieInfobyId is further calls scrapeMovieInfo and extracts all the information for the movie.
-# after the data is returned to test.php , again a call to reviews of the movie is made.
-# getMovieReview fuction is called which uses the title_id i.e movieId to get the review of movies by the users.
-# the information is displayed through html tables.
+#Basic Info :
+The web app basically scrapes the IMDb page corresponding a particular actor and extracts movies the actor is known for.
+After getting the name of the movies and its IMDb id, the web app internally extracts the information and reviews of all these movies.
 
+#Languages used :
+PHP
+HTML/CSS/Javascript
 
+#Basic functional flow of the app :
+User enters the name of the actor/actress in search box and hits search button.
+The data is recieved and sent from html form to test.php.
+The actor/actress name in the input is passed to function getActorInfo($title) in class Imdb.
+Inside this function getIMDbIdFromSearch($title),this method searches the given title on Google, Bing or Ask to get the best possible match and extracts the "imdbId" corresponding that actor.
+
+This imdbId is passed to function getActorInfoById($imdbId) which calls scrapeActorInfo($imdbUrl) and scraps the information of actor along with the movies he is known for.
+
+After getting the ids of movie he is know for , function getMovieUrl is called which extracts the url of the movies a particular actor is known for. 
+From the url recieved the movieIds are extracted and passed to funtion getMovieById which futher calls scrapeMovieInfo and extracts all the information for the movie.
+ 
+After this process, the data is returned to test.php in an array.
+Again a call to get reviews of the movie is made and the title_id or the movieId recieved are passed to function getMovieReview which calls getMovieReview_Inside($imdbUrl) and extracts the reviews and and the user info, an array is returned and used up by function of javascript to display the information in tabular form.
